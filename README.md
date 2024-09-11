@@ -73,6 +73,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - Create React App
 - Configured TailwindCSS
+- -Header
+- Login Form
+- Sign up Form
 
 # Features
 
@@ -90,3 +93,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - NetflixGPT
   - Search Bar
   - Movie
+
+//Routing Setup
+npx create-react-app
+npm i -D react-router-dom
+
+//For Form
+Formik is A good Library for huge form fill up
