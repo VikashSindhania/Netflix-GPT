@@ -74,8 +74,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Create React App
 - Configured TailwindCSS
 - -Header
+- Routing of App
 - Login Form
 - Sign up Form
+- Form Validation
+- useRef Hook
+- Firebase Setup
+- Deploying our app to production
+- Create SignUp User Account in Firebase
 
 # Features
 
@@ -100,3 +106,14 @@ npm i -D react-router-dom
 
 //For Form
 Formik is A good Library for huge form fill up
+
+# useRef Hooks
+
+-
+
+# Concept
+
+- useRef is used to Reference a TAG.(Ex-input, Button, and other Element Tag)
+- Dist folder --> when we run build then all the production ready file build as a bundle on the dist folder.
+
+- build --> when we do npx create-react-app we have a build folder instead of dist folder
