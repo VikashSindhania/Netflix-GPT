@@ -82,6 +82,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Firebase Setup
 - Deploying our app to production
 - Create SignUp User Account in Firebase
+- Implement Sign In user Api
+- Created Redux Store with userSlice
 
 # Features
 
@@ -109,11 +111,18 @@ Formik is A good Library for huge form fill up
 
 # useRef Hooks
 
--
-
 # Concept
 
 - useRef is used to Reference a TAG.(Ex-input, Button, and other Element Tag)
 - Dist folder --> when we run build then all the production ready file build as a bundle on the dist folder.
 
 - build --> when we do npx create-react-app we have a build folder instead of dist folder
+
+# Redux
+
+npm i -D @reduxjs/toolkit
+npm i react-redux
+
+First thing I created a store.
+second thing I created a SLice.
+Added the slice Reducer on to my store and then i Am providing my Store.
