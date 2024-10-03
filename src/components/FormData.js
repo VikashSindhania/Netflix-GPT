@@ -1,5 +1,9 @@
 import React from "react";
 const FormData = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("handleSubmit", e.target);
+  };
   return (
     <div className="min-h-screen p-8">
       <div className=" text-center mb-6">
@@ -8,7 +12,15 @@ const FormData = () => {
 
       {/* Form Section */}
       <section>
-        <form>
+        <form onSubmit={handleSubmit}>
+          <div className="text-end">
+            <button
+              type="submit"
+              className="font-bold rounded p-3 m-2  bg-green-400"
+            >
+              Submit
+            </button>
+          </div>
           {/* Single Row with Two Inputs */}
           <div className="flex space-x-4 mb-4">
             <div className="w-1/2">
@@ -154,6 +166,117 @@ const FormData = () => {
                 placeholder="Email"
                 className="border border-gray-300 p-2 w-full"
               />
+            </div>
+          </div>
+
+          {/* Grid Column Span */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="w-full">
+              <label className="block mb-1">Salutation</label>
+              <input
+                id="salutation"
+                type="text"
+                placeholder="Salutation"
+                className="border border-gray-300 p-2 w-full shadow-lg"
+              />
+            </div>
+            <div className="w-full">
+              <label className="block mb-1">Gender</label>
+              <input
+                id="gender"
+                type="text"
+                placeholder="Gender"
+                className="border border-gray-300 p-2 shadow-lg w-full"
+              />
+            </div>
+          </div>
+
+          {/* Card UI  */}
+          <div className="max-w-md mx-auto bg-blue-500 shadow-lg rounded-lg p-6 my-5 opacity-80">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="w-full">
+                <label className="block mb-1">Salutation</label>
+                <input
+                  id="salutation"
+                  type="text"
+                  placeholder="Salutation"
+                  className="border border-black p-2 w-full rounded-md shadow-lg"
+                />
+              </div>
+              <div className="w-full">
+                <label className="block mb-1">Gender</label>
+                <input
+                  id="gender"
+                  type="text"
+                  placeholder="Gender"
+                  className="border border-gray-300 p-2 shadow-lg w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="m-2 p-2">
+            <label
+              htmlFor="countryCode"
+              className="block text-sm font-bold mb-2"
+            >
+              Country Code:
+            </label>
+            <select
+              id="countryCode"
+              className="border border-gray-400 rounded p-2 w-full"
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select a Country Code
+              </option>
+              <option value="India">India</option>
+              <option value="Singapore">Singapore</option>
+              <option value="USA">USA</option>
+            </select>
+          </div>
+
+          <div className="m-2 p-2">
+            <p className="text-sm font-bold mb-2">Select Gender</p>
+            <div>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  className="mr-2"
+                />
+                Male
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  className="mr-2"
+                />
+                Female
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="other"
+                  className="mr-2"
+                />
+                other
+              </label>
+            </div>
+
+            <div className="m-1 p-1">
+              <label>Are You an Ex Servicemen:</label>
+              <label className="ml-4">
+                Yes: <input type="radio" name="X" value="yes" />
+              </label>
+
+              <label className="ml-4">
+                No <input type="radio" name="X" value="no" />
+              </label>
             </div>
           </div>
         </form>

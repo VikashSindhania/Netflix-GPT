@@ -25,6 +25,10 @@ const Header = () => {
     navigate("/formData");
   };
 
+  const handleUser = () => {
+    navigate("/user");
+  };
+
   return (
     <div className=" w-screen absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
       <img
@@ -33,13 +37,19 @@ const Header = () => {
         alt="logo"
       />
 
-      <div>
-        {" "}
+      <div className="m-2 p-2">
         <button
-          className="font-bold m-1 text-2xl text-white"
+          className="font-bold m-2 text-2xl text-white"
           onClick={handleformData}
         >
           Form
+        </button>
+
+        <button
+          className="font-bold m-2 text-2xl text-green-200"
+          onClick={handleUser}
+        >
+          User
         </button>
       </div>
 

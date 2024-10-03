@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import Login from "./Login";
 import Browse from "./Browse";
 import FormData from "./FormData";
+//import User from "./User";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import User from "./User";
 
 const Body = () => {
   // First thing Will be hook Every Time then Rest...
@@ -23,6 +25,10 @@ const Body = () => {
     {
       path: "/formData",
       element: <FormData />,
+    },
+    {
+      path: "/user",
+      element: <User />,
     },
   ]);
 
