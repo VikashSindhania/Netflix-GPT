@@ -18,13 +18,14 @@ const User = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("formData Submit", formData);
-    handleApi(formData);
+    const data = formData;
+    console.log("formData Submit", data);
+    handleApi(data);
   };
 
-  const handleApi = async (formData) => {
-    const response = await axios.post("http://localhost:5000/User", {
-      formData,
+  const handleApi = async (data) => {
+    const response = await axios.post("http://localhost:5000/user", {
+      data,
     });
     console.log("response", response);
   };
