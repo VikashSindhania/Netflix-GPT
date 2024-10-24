@@ -10,6 +10,8 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import User from "./User";
+import Content from "./Content";
+import CallbackExample from "./Explore/CallbackExample";
 
 const Body = () => {
   // First thing Will be hook Every Time then Rest...
@@ -29,6 +31,14 @@ const Body = () => {
     {
       path: "/user",
       element: <User />,
+    },
+    {
+      path: "/content",
+      element: <Content />,
+    },
+    {
+      path: "content/callbackExample",
+      element: <CallbackExample />,
     },
   ]);
 

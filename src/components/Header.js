@@ -29,6 +29,10 @@ const Header = () => {
     navigate("/user");
   };
 
+  const handleContent = () => {
+    navigate("/content");
+  };
+
   return (
     <div className=" w-screen absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
       <img
@@ -50,6 +54,13 @@ const Header = () => {
           onClick={handleUser}
         >
           User
+        </button>
+
+        <button
+          className="font-bold m-2 text-2xl text-gray-300"
+          onClick={handleContent}
+        >
+          Content
         </button>
       </div>
 
