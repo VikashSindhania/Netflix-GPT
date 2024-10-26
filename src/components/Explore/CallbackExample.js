@@ -2,12 +2,13 @@ import React, { useState, useCallback } from "react";
 import { TextButton } from "../GlowingButton";
 
 // Child component that prints whenever it  renders
-const ChildComponent = React.memo(({ caseNum, onClick }) => {
-  console.log(
-    `child component ${caseNum}called in callback Example`,
+const ChildComponent = React.memo(({ onClick, caseNum }) => {
+  console.log(`Child component for Case ${caseNum} rendered`);
+  // console.log(
+  //   `child component ${caseNum}called in callback Example`,
 
-    onClick
-  );
+  //   onClick
+  // );
   return (
     <div>
       <h3> case {caseNum}: Child Component</h3>
@@ -23,14 +24,19 @@ const CallbackExample = () => {
   const [otherState, setOtherState] = useState(false);
 
   const incrementCase1 = () => {
+    console.log("incrementCase1 function re-created");
     setCount1((prevCount) => prevCount + 1);
   };
 
   const incrementCase2 = useCallback(() => {
+    console.log("incrementCase2 function called but not re-created");
     setCount2((prevCount) => prevCount + 1);
   }, []);
 
   //Case 2: With useCallback (function is memoized and does not cahnge on re-renders)
+
+  // Adding console logs to parent component re-render
+  console.log("Parent component rendered");
 
   const buttonStyle =
     "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800";
@@ -67,8 +73,27 @@ const CallbackExample = () => {
 
         <ChildComponent caseNum="2" onClick={incrementCase2} />
 
-        <button onClick={() => setOtherState(!otherState)}>
+        <button
+          className={buttonStyle}
+          onClick={() => setOtherState(!otherState)}
+        >
           Toggle other State (Triggers re-render)
+        </button>
+      </div>
+
+      {/* Additional Section for showing state Toggling */}
+      <div style={divStyle}>
+        <h3>Toggle State Section</h3>
+        <p>
+          This button toggles `otherState`, which will trigger a re-render of
+          the parent component.\ With useCallback, the child component will NOT
+          re-render if the function hasn't changed.
+        </p>
+        <button
+          className={buttonStyle}
+          onClick={() => setOtherState(!otherState)}
+        >
+          Toggle Other State(Current: {otherState.toString()})
         </button>
       </div>
     </div>
