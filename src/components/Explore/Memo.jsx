@@ -48,3 +48,8 @@ function ChildComponent({ number }) {
 
 //UseMemory --> useMemo
 //useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+//React default behaviour is that when state changes it render the whole component whatever method, function, console and other 
+//code is included in that component, it render all the code . if there are multiple useState used and you want to controlled the
+//state behaviour where heavy calculation is running and that's make other use state to work not fine. so with the help of useMemo you can
+// win that control.
+
